@@ -5,7 +5,4 @@
                 <class name="tests.LoginTest"/>
             </classes>
         </test>
-        <classes>
-            <class name="tests.RegistrationTest"/>
-        </classes>
     </suite>
