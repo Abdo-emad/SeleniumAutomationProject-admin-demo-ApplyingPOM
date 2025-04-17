@@ -38,5 +38,6 @@ public class LoginTest extends BaseTest {
         System.out.println(driver.getTitle());
         Log.Info("Validating the title of the page");
         Assert.assertEquals(driver.getCurrentUrl(),"https://admin-demo.nopcommerce.com/login");
-          }
+        Log.trace("Test execution done");
+    }
 }
