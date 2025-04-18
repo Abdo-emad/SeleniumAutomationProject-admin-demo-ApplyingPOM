@@ -1,5 +1,6 @@
 package Base;
 
+import Driver.DriverManager;
 import Utils.Log;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +12,7 @@ public class BaseTest{
     @BeforeMethod
     public void Setup(){
         Log.Info("Test started");
-        driver= new ChromeDriver();
+        driver= DriverManager.CreateInstance("edge");
         driver.manage().window().maximize();
         driver.get("https://admin-demo.nopcommerce.com/login");
         driver.manage().deleteAllCookies();

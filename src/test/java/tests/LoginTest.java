@@ -10,6 +10,9 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+import static Utils.ReadFromPropertyFile.GetDataFromPropFile;
+
+
 public class LoginTest extends BaseTest {
     @DataProvider(name="LoginData")
     public Object[][] getLoginData() throws IOException {
@@ -29,11 +32,24 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(dataProvider ="LoginData" )
-    public void ValidLogin(String userEmail, String pass){
+    public void Login(String userEmail, String pass){
         Log.Info("Starting Valid Login Test");
        LoginPage loginPage = new LoginPage(driver);
         loginPage.EnterEmail(userEmail);
         loginPage.EnterPassword(pass);
+        loginPage.LoginClick();
+        System.out.println(driver.getTitle());
+        Log.Info("Validating the title of the page");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://admin-demo.nopcommerce.com/login");
+        Log.trace("Test execution done");
+    }
+
+    @Test()
+    public void ValidLogin() throws IOException {
+        Log.Info("Starting Valid Login Test");
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.EnterEmail(GetDataFromPropFile("userEmail"));
+        loginPage.EnterPassword(GetDataFromPropFile("userPassword"));
         loginPage.LoginClick();
         System.out.println(driver.getTitle());
         Log.Info("Validating the title of the page");
