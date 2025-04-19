@@ -9,7 +9,7 @@ public class FilesUtils {
 
     public static void deleteFiles(File path) {
         try {
-            FileUtils.deleteDirectory(path);
+            FileUtils.cleanDirectory(path);
         }catch (IOException e) {
           Log.error(e.getMessage());
         }}
