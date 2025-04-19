@@ -8,17 +8,8 @@ public class Log {
     public static void Info(String message){
         logger.info(message);
     }
-    public static void Error(String message){
-        logger.error(message);
-    }
-    public static void Warn(String message){
-        logger.warn(message);
-    }
     public  static  void trace(String message){
         logger.trace(message);
-    }
-    public static void trace(String... message){
-        logger.trace(String.join("",message));
     }
 
     public static void info(String... message){
