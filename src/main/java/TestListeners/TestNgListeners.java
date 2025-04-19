@@ -9,9 +9,10 @@ import java.io.File;
 
 
 public class TestNgListeners implements ITestListener {
-    String path = System.getProperty("user.dir")+"./target";
+    String path = System.getProperty("user.dir")+"./allure-results";
     @Override
     public void onTestStart(ITestResult result) {
+        FilesUtils.deleteFiles(new File(path));
         Log.info("Test Start");
     }
 @Override
@@ -31,7 +32,7 @@ public class TestNgListeners implements ITestListener {
     }
     @Override
     public void onFinish(ITestContext context) {
-        FilesUtils.deleteFiles(new File(path));
+        Log.info("Test Finished");
     }
 
 
