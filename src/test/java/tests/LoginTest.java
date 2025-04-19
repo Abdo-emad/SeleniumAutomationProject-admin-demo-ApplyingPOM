@@ -2,17 +2,19 @@ package tests;
 
 import Base.BaseTest;
 import Pages.LoginPage;
+import TestListeners.TestNgListeners;
 import Utils.ExcelUtils;
 import Utils.Log;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
 import static Utils.ReadFromPropertyFile.GetDataFromPropFile;
 
-
+@Listeners(TestNgListeners.class)  //To attach the TestNgListeners class to the test class
 public class LoginTest extends BaseTest {
     @DataProvider(name="LoginData")
     public Object[][] getLoginData() throws IOException {
@@ -43,6 +45,7 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(),"https://admin-demo.nopcommerce.com/login");
         Log.trace("Test execution done");
     }
+
 
     @Test()
     public void ValidLogin() throws IOException {
