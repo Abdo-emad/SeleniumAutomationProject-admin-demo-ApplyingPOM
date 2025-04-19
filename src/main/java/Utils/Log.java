@@ -17,4 +17,19 @@ public class Log {
     public  static  void trace(String message){
         logger.trace(message);
     }
+    public static void trace(String... message){
+        logger.trace(String.join("",message));
+    }
+
+    public static void info(String... message){
+        logger.info(String.join("",message));
+    }
+
+    public static void error(String... message){
+        logger.error(String.join("",message));
+    }
+
+    public static void warning(String... message){
+        logger.warn(String.join("",message));
+    }
 }
