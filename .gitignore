@@ -40,3 +40,4 @@ build/
 --### Windows ###
 test-output/
 allure-results/
+.idea
