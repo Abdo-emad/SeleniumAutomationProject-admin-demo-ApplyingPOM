@@ -1,0 +1,16 @@
+//to create a new branch and switch to it in one step
+git checkout -b <branch_name>
+//to switch to an existing branch
+git checkout <branch_name>
+//to remove branches that are already merged
+git branch -d <branch_name>
+//to remove cached files
+git rm --cached <file_name>
+//to reset the index and working tree
+git reset --hard
+//to remove untracked files
+git clean -f
+//to revert a commit
+git revert <commit_hash>
+//to view the commit history
+git log
