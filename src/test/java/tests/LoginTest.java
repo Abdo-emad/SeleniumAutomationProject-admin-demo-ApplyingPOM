@@ -5,6 +5,7 @@ import Pages.LoginPage;
 import TestListeners.TestNgListeners;
 import Utils.ExcelUtils;
 import Utils.Log;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -17,6 +18,7 @@ import static Utils.ReadFromPropertyFile.GetDataFromPropFile;
 @Listeners(TestNgListeners.class)  //To attach the TestNgListeners class to the test class
 public class LoginTest extends BaseTest {
     @DataProvider(name="LoginData")
+    @Step("login data")
     public Object[][] getLoginData() throws IOException {
 
         String filePath = System.getProperty("user.dir")+"/testdata/TestData.xlsx";
@@ -34,6 +36,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(dataProvider ="LoginData" )
+    @Step("Valid Login")
     public void Login(String userEmail, String pass){
         Log.Info("Starting Valid Login Test");
        LoginPage loginPage = new LoginPage(driver);
@@ -48,6 +51,7 @@ public class LoginTest extends BaseTest {
 
 
     @Test()
+    @Step("Valid Login")
     public void ValidLogin() throws IOException {
         Log.Info("Starting Valid Login Test");
         LoginPage loginPage = new LoginPage(driver);
@@ -56,7 +60,7 @@ public class LoginTest extends BaseTest {
         loginPage.LoginClick();
         System.out.println(driver.getTitle());
         Log.Info("Validating the title of the page");
-        Assert.assertEquals(driver.getCurrentUrl(),"https://admin-demo.nopcommerce.com/login");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://admin-demo.nopcommerce.com/login99");
         Log.trace("Test execution done");
     }
 }
