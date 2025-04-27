@@ -28,7 +28,7 @@ public class BaseTest{
     @Step("TearDown")
     public void tearDown(ITestResult result) throws IOException {
         if (ITestResult.SUCCESS == result.getStatus()) {
-            AllureUtils.getScreenShot(driver);
+            AllureUtils.attachScreenshotToAllure("Success", "ScreenShot/screenshot" + result.getName() + ".png");
         }
         driver.quit();
     }
