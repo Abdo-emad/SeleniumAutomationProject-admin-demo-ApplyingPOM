@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest {
         return data;
     }
 
-    @Test(dataProvider ="LoginData" )
+    @Test(dataProvider ="LoginData")
     @Step("Valid Login")
     public void Login(String userEmail, String pass){
         Log.Info("Starting Valid Login Test");
@@ -50,7 +50,7 @@ public class LoginTest extends BaseTest {
     }
 
 
-    @Test()
+    @Test(retryAnalyzer = RetryAnalyzer.TestNgRetryAnalyzer.class)
     @Step("Valid Login")
     public void ValidLogin() throws IOException {
         Log.Info("Starting Valid Login Test");
