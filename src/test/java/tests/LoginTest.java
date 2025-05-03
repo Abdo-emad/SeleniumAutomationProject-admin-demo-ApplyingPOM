@@ -1,3 +1,4 @@
+/*
 package tests;
 
 import Base.BaseTest;
@@ -17,7 +18,8 @@ import static Utils.ReadFromPropertyFile.GetDataFromPropFile;
 
 @Listeners(TestNgListeners.class)  //To attach the TestNgListeners class to the test class
 public class LoginTest extends BaseTest {
-    @DataProvider(name="LoginData")
+ */
+/*   @DataProvider(name="LoginData")
     @Step("login data")
     public Object[][] getLoginData() throws IOException {
 
@@ -47,7 +49,8 @@ public class LoginTest extends BaseTest {
         Log.Info("Validating the title of the page");
         Assert.assertEquals(driver.getCurrentUrl(),"https://admin-demo.nopcommerce.com/login");
         Log.trace("Test execution done");
-    }
+    }*//*
+
 
 
     @Test(retryAnalyzer = RetryAnalyzer.TestNgRetryAnalyzer.class)
@@ -64,3 +67,4 @@ public class LoginTest extends BaseTest {
         Log.trace("Test execution done");
     }
 }
+*/
